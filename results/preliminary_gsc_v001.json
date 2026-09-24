@@ -1,0 +1,70 @@
+{
+  "status": "preliminary_existing_checkpoint_comparison",
+  "dataset": "Google Speech Commands v0.01",
+  "task": {
+    "classes": 12,
+    "test_samples": 3081,
+    "sample_rate_hz": 16000,
+    "clip_seconds": 1
+  },
+  "accuracy_protocol": {
+    "split": "testing",
+    "same_sample_identities": true,
+    "strictly_unified_training": false,
+    "strictly_unified_silence_waveforms": false,
+    "note": "Existing checkpoints used different training budgets; treat values as preliminary."
+  },
+  "efficiency_protocol": {
+    "machine": "Apple M4 MacBook Air",
+    "runtime": "PyTorch eager CPU, one thread",
+    "batch_size": 1,
+    "latency_statistic": "median of 300 runs",
+    "latency_scope": "native frontend plus model",
+    "mac_scope": "approximate model-only MACs"
+  },
+  "models": {
+    "dscnn": {
+      "accuracy": 0.9415774099,
+      "macro_f1": 0.9418187456,
+      "parameters": 23180,
+      "fp32_parameter_kib": 90.55,
+      "approx_macs": 2660000,
+      "cpu_end_to_end_median_ms": 0.294
+    },
+    "bcresnet": {
+      "accuracy": 0.9639727361,
+      "macro_f1": 0.9639577492,
+      "parameters": 9232,
+      "fp32_parameter_kib": 36.06,
+      "approx_macs": 2530000,
+      "cpu_end_to_end_median_ms": 1.642
+    },
+    "kwt": {
+      "accuracy": 0.9691658552,
+      "macro_f1": 0.9693778885,
+      "parameters": 609612,
+      "fp32_parameter_kib": 2381.30,
+      "approx_macs": 58720000,
+      "cpu_end_to_end_median_ms": 1.708
+    },
+    "sparknet": {
+      "accuracy": 0.9529373580,
+      "macro_f1": 0.9531700096,
+      "parameters": 11500,
+      "fp32_parameter_kib": 44.92,
+      "approx_macs": 1080000,
+      "cpu_end_to_end_median_ms": 0.488
+    },
+    "tdnn_v2": {
+      "accuracy": 0.9506653684,
+      "macro_f1": 0.9506202068,
+      "parameters": 53516,
+      "fp32_parameter_kib": 209.05,
+      "approx_macs": 5020000,
+      "cpu_end_to_end_median_ms": 0.372,
+      "best_validation_accuracy": 0.9486,
+      "best_checkpoint_step": 13200
+    }
+  }
+}
+
